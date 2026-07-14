@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: fastapi-rag-demo
+    runtime: python
+    repo: https://github.com/YOUR_USERNAME/fastapi-rag-demo
+    plan: free
+    region: oregon
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_KEY
+        sync: false
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: OPENROUTER_MODEL
+        value: meta-llama/llama-3.3-70b-instruct
+      - key: SIMILARITY_THRESHOLD
+        value: 0.3
+      - key: MAX_RESULTS
+        value: 5
+      - key: API_KEY
+        sync: false
