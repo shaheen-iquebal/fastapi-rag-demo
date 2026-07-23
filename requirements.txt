@@ -2,6 +2,6 @@ fastapi
 uvicorn
 python-dotenv
 supabase
-sentence-transformers
 openai
 pydantic
+python-multipart
